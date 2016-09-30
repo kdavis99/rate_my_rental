@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :rentals
   devise_for :users
-  root 'home#index'
+  resources :rentals do
+   	resources :reviews, :shallow => true
+  end
+  root 'rentals#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

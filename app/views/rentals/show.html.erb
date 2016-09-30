@@ -1,0 +1,155 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Addr full adress:</strong>
+<%= @rental.addr_full_adress %>
+</p>
+
+<p>
+<strong>Addr street name:</strong>
+<%= @rental.addr_street_name %>
+</p>
+
+<p>
+<strong>Addr street num:</strong>
+<%= @rental.addr_street_num %>
+</p>
+
+<p>
+<strong>Addr zip:</strong>
+<%= @rental.addr_zip %>
+</p>
+
+<p>
+<strong>Addr city:</strong>
+<%= @rental.addr_city %>
+</p>
+
+<p>
+<strong>Addr country:</strong>
+<%= @rental.addr_country %>
+</p>
+
+<p>
+<strong>Dets beds:</strong>
+<%= @rental.dets_beds %>
+</p>
+
+<p>
+<strong>Dets baths:</strong>
+<%= @rental.dets_baths %>
+</p>
+
+<p>
+<strong>Dets is complex:</strong>
+<%= @rental.dets_is_complex %>
+</p>
+
+<p>
+<strong>Dets stories:</strong>
+<%= @rental.dets_stories %>
+</p>
+
+<p>
+<strong>Dets company owned:</strong>
+<%= @rental.dets_company_owned %>
+</p>
+
+<p>
+<strong>Dets owner:</strong>
+<%= @rental.dets_owner %>
+</p>
+
+<p>
+<strong>Amen parking:</strong>
+<%= @rental.amen_parking %>
+</p>
+
+<p>
+<strong>Amen pets:</strong>
+<%= @rental.amen_pets %>
+</p>
+
+<p>
+<strong>Amen washer dryer:</strong>
+<%= @rental.amen_washer_dryer %>
+</p>
+
+<p>
+<strong>Amen pool:</strong>
+<%= @rental.amen_pool %>
+</p>
+
+<p>
+<strong>Amen spa:</strong>
+<%= @rental.amen_spa %>
+</p>
+
+<p>
+<strong>Amen gym:</strong>
+<%= @rental.amen_gym %>
+</p>
+
+<p>
+<strong>Amen dishwasher:</strong>
+<%= @rental.amen_dishwasher %>
+</p>
+
+<p>
+<strong>Amen central air:</strong>
+<%= @rental.amen_central_air %>
+</p>
+
+<p>
+<strong>Amen heater:</strong>
+<%= @rental.amen_heater %>
+</p>
+
+<p>
+<strong>Util gas:</strong>
+<%= @rental.util_gas %>
+</p>
+
+<p>
+<strong>Util electricity:</strong>
+<%= @rental.util_electricity %>
+</p>
+
+<p>
+<strong>Util trash:</strong>
+<%= @rental.util_trash %>
+</p>
+
+<p>
+<strong>Util water:</strong>
+<%= @rental.util_water %>
+</p>
+
+<p>
+<strong>Util tv:</strong>
+<%= @rental.util_tv %>
+</p>
+
+<p>
+<strong>Util wifi:</strong>
+<%= @rental.util_wifi %>
+</p>
+<% @rental.reviews.each do |review| %>
+	<% if !review.new_record? %>
+		<tr>
+			<td><%= review.overall %></td>
+			<td><%= review.safety %></td>
+			<td><%= review.noise %></td>
+			<td><%= review.clean %></td>
+			<td><%= review.comment %></td>
+			<td><%= link_to 'Edit', edit_review_path(review) %></td>
+			<td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+<% end %>
+<h3>Create New Review</h3>
+  <%= render 'reviews/form' %>
+<br>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>
