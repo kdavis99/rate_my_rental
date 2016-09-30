@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930033549) do
+ActiveRecord::Schema.define(version: 20160930062439) do
+
+  create_table "images", force: :cascade do |t|
+    t.string   "filename"
+    t.integer  "rental_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "images", ["rental_id"], name: "index_images_on_rental_id"
 
   create_table "rentals", force: :cascade do |t|
     t.string   "addr_full_adress"
@@ -19,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160930033549) do
     t.integer  "addr_street_num"
     t.integer  "addr_zip"
     t.string   "addr_city"
-    t.string   "addr_country"
+    t.string   "addr_state"
     t.integer  "dets_beds"
     t.integer  "dets_baths"
     t.boolean  "dets_is_complex"

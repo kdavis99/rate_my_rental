@@ -14,7 +14,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @rental = Rental.find params[:rental_id]
+    @review = @rental.reviews.new
   end
 
   # GET /reviews/1/edit
@@ -24,7 +25,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    @rental = Rental.find params[:rental_id]
+    @review = @rental.reviews.new(review_params)
     @review.user = current_user
 
     respond_to do |format|

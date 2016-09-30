@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :images
   resources :reviews
   resources :rentals
   devise_for :users
   resources :rentals do
    	resources :reviews, :shallow => true
+   	resources :images, :shallow => true
   end
   root 'rentals#index'
   # The priority is based upon order of creation: first created -> highest priority.

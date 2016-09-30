@@ -26,8 +26,8 @@
 </p>
 
 <p>
-<strong>Addr country:</strong>
-<%= @rental.addr_country %>
+<strong>Addr state:</strong>
+<%= @rental.addr_state %>
 </p>
 
 <p>
@@ -147,8 +147,15 @@
 		</tr>
 	<% end %>
 <% end %>
+<% @rental.images.each do |image| %>
+	<% if !image.new_record? %>
+			<%= image_tag (root_url + "/images/" + image.filename), alt: image.filename, size: "200x200", overflow: "hidden", remote: image %><br>
+	<% end %>
+<% end %>
+
 <h3>Create New Review</h3>
-  <%= render 'reviews/form' %>
+<%= render 'reviews/form' %>
+<%= render 'images/form' %>
 <br>
 
 <%= link_to 'Edit', edit_rental_path(@rental) %> |

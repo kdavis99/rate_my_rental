@@ -6,7 +6,7 @@ class CreateRentals < ActiveRecord::Migration
       t.integer :addr_street_num
       t.integer :addr_zip
       t.string :addr_city
-      t.string :addr_country
+      t.string :addr_state
       t.integer :dets_beds
       t.integer :dets_baths
       t.boolean :dets_is_complex
