@@ -48,10 +48,10 @@
 
 users = User.create(
   [
-    { email: 'a@a.com', name: "Mrs. Apple", password: "a", password_confirmation: "a"}
-    { email: 'b@b.com', name: "Mr. Banana", password: "b", password_confirmation: "b"}
-    { email: 'c@c.com', name: "Miss Chocolate", password: "c", password_confirmation: "c"}
-  ]
+    { email: 'a@a.com', password: "a", password_confirmation: "a"},
+    { email: 'b@b.com', password: "b", password_confirmation: "b"},
+    { email: 'c@c.com', password: "c", password_confirmation: "c"}
+  ])
 
 rentals = Rental.create(
   [

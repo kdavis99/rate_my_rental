@@ -134,6 +134,14 @@
 <strong>Util wifi:</strong>
 <%= @rental.util_wifi %>
 </p>
+<table>
+  <tr>
+    <th>Overall &nbsp;</th>
+    <th>Safety &nbsp;</th>
+    <th>Noise &nbsp;</th>
+    <th>Clean &nbsp;</th>
+    <th>Comment</th>
+  </tr>
 <% @rental.reviews.each do |review| %>
 	<% if !review.new_record? %>
 		<tr>
@@ -147,6 +155,7 @@
 		</tr>
 	<% end %>
 <% end %>
+</table>
 <% @rental.images.each do |image| %>
 	<% if !image.new_record? %>
 			<%= image_tag (root_url + "/images/" + image.filename), alt: image.filename, size: "200x200", overflow: "hidden", remote: image %><br>
