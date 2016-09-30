@@ -140,6 +140,7 @@
     <th>Safety &nbsp;</th>
     <th>Noise &nbsp;</th>
     <th>Clean &nbsp;</th>
+    <th>Price &nbsp;</th>
     <th>Comment</th>
   </tr>
 <% @rental.reviews.each do |review| %>
@@ -149,6 +150,7 @@
 			<td><%= review.safety %></td>
 			<td><%= review.noise %></td>
 			<td><%= review.clean %></td>
+			<td><%= review.price %></td>
 			<td><%= review.comment %></td>
 			<td><%= link_to 'Edit', edit_review_path(review) %></td>
 			<td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>

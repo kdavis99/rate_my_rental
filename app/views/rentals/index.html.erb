@@ -5,12 +5,17 @@
 <table>
   <thead>
     <tr>
+      <th></th>
+      <th></th>
+      <th></th>
       <th>Addr full adress</th>
+<!--
       <th>Addr street name</th>
       <th>Addr street num</th>
       <th>Addr zip</th>
       <th>Addr city</th>
       <th>Addr state</th>
+-->
       <th>Dets beds</th>
       <th>Dets baths</th>
       <th>Dets is complex</th>
@@ -39,12 +44,17 @@
   <tbody>
     <% @rentals.each do |rental| %>
       <tr>
+        <td><%= link_to 'Show', rental %></td>
+        <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
+        <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= rental.addr_full_adress %></td>
+<!--
         <td><%= rental.addr_street_name %></td>
         <td><%= rental.addr_street_num %></td>
         <td><%= rental.addr_zip %></td>
         <td><%= rental.addr_city %></td>
         <td><%= rental.addr_state %></td>
+-->
         <td><%= rental.dets_beds %></td>
         <td><%= rental.dets_baths %></td>
         <td><%= rental.dets_is_complex %></td>
@@ -66,9 +76,6 @@
         <td><%= rental.util_water %></td>
         <td><%= rental.util_tv %></td>
         <td><%= rental.util_wifi %></td>
-        <td><%= link_to 'Show', rental %></td>
-        <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
-        <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
